@@ -1,7 +1,7 @@
 
 function varargout = Scara(varargin)
 % SCARA MATLAB code for Scara.fig
-%      SCARA, by itself, creates a new SCARA or raises the existing
+%      SCARA, by itself, creates a new SCARA or raises the existin
 %      singleton*.
 %
 %      H = SCARA returns the handle to a new SCARA or the handle to
