@@ -1,7 +1,7 @@
 
 function varargout = Scara(varargin)
 % SCARA MATLAB code for Scara.fig
-%      SCARA, by itself, creates a new SCARA or raises the existin
+%      SCARA, by itself, creates a new SCARA or raises the existing
 %      singleton*.
 %
 %      H = SCARA returns the handle to a new SCARA or the handle to
@@ -674,8 +674,15 @@ global end_theta1;
 global end_theta2 ;
 global end_d3 ; 
 global end_theta4;
+global pre_theta1;
+global pre_theta2;
+global pre_d3;
+global pre_theta4; 
 
-
+end_theta1= pre_theta1 ;
+end_theta2= pre_theta2 ;
+end_d3 = pre_d3;
+end_theta4= pre_theta4;
 if  handles.checkbox_workspace.Value
       Workspace(handles)
 else

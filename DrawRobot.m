@@ -38,21 +38,22 @@ alpha = [0      ; 0      ; 0  ; pi    ];
 d     = [0      ; 0      ; -d3 ; d4   ];
 theta = [theta1*pi/180 ; theta2*pi/180 ; 0  ; theta4*pi/180];
 
-% 
+% Ma trận biến đổi thuần nhất của các Rf kế cạnh nhau
 A0_1 = DH_matrix(a(1),alpha(1),d(1),theta(1)) ;
 A1_2 = DH_matrix(a(2),alpha(2),d(2),theta(2)) ;
 A2_3 = DH_matrix(a(3),alpha(3),d(3),theta(3)) ;
 A3_4 = DH_matrix(a(4),alpha(4),d(4),theta(4)) ;
 
-A0_2=A0_1*A1_2;
+A0_2=A0_1*A1_2; 
 A0_3=A0_2*A2_3;
 A0_4=A0_3*A3_4;   
+
 % Position 
 p0 = [0;0;0];
 p1 = [A0_1(1,4) A0_1(2,4) A0_1(3,4)];
 p2 = [A0_2(1,4) A0_2(2,4) A0_2(3,4)];
 p3 = [A0_3(1,4) A0_3(2,4) A0_3(3,4)];
-p4 = [A0_4(1,4) A0_4(2,4) A0_4(3,4)];
+p4 = [A0_4(1,4) A0_4(2,4) A0_4(3,4)]; %3 vị trí x,y,z của effector
 % Orientation
  o1 = Orientation(A0_1);
  o2 = Orientation(A0_2);
